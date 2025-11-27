@@ -157,7 +157,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--batch_size", type=int, default=8)
-    parser.add_argument("--epoch", type=int, default=30)
+    parser.add_argument("--epoch", type=int, default=15)
     parser.add_argument("--lr", type=float, default=0.001)
     parser.add_argument("--data_dir", type=str, default='./Dataset')
     parser.add_argument("--pre_weights", type=str)

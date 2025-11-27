@@ -8,7 +8,7 @@ import torchvision
 from torchvision import transforms
 
 from nets.nn import resnet50
-from utils.loss import YoloLoss            # Loss 기본 유지
+from utils.loss import yoloLoss            # Loss 기본 유지
 from utils.dataset import Dataset
 
 import argparse
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--batch_size", type=int, default=8)
-    parser.add.argument("--epoch", type=int, default=30)
+    parser.add.argument("--epoch", type=int, default=15)
     parser.add.argument("--lr", type=float, default=0.001)
     parser.add.argument("--data_dir", type=str, default='./Dataset')
     parser.add.argument("--pre_weights", type=str)
