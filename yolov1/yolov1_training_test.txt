@@ -1,0 +1,44 @@
+1. yolov1 source code download in LMS system
+
+2. downloading VOCdatasets in google drive
+  - https://drive.google.com/file/d/1BbFW44VMZLOGxlp2Rd_7LoyqEbR8F7NO/view?usp=sharing
+
+3. Extracting all tars into one director named 'VOC2012'
+  >> unzip VOC2012.zip
+
+4. It should have this basic structure
+ - ./VOC2012
+
+5. Generating the train and test list
+ >> python3 ./tools/convert_voc.py --dir_path ./Dataset 
+
+	├── Dataset 
+	    ├── Images
+	        ├── 0001.jpg
+	        ├── 0002.jpg
+	    ├── Labels
+	        ├── 0001.txt
+	        ├── 0002.txt
+	    ├── train.txt
+	    ├── test.txt
+
+6.  Traing
+   (1)  before training,
+       a.  modifying root directory 
+           - root = '../Dataset/' --> root = './Datasets/'
+           -  with open('../Dataset/train.txt') as f --> with open('./Dataset/train.txt') as f
+           -  with open('../Dataset/test.txt') as f: --> with open('./Dataset/test.txt') as f:
+      b.  modifying proper hyperparametes 
+         - for example batch_size = 8
+
+   >>python3 main.py
+
+7. Evaluation
+   >> python3 eval.py
+   - In evaluation.py, im_show=False change to True to see the results.
+
+8. Detection
+   (1)  To show the result image
+        >> python3 detect.py --image assets/person.jpg
+   (2) To save result image
+        >> python3 detect.py --image assets/person.jpg --save_img
