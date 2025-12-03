@@ -11,7 +11,7 @@ from torch.utils.data import Dataset
 
 class YOLOv1Dataset(Dataset):
     def __init__(self, img_dir, label_dir, list_file,
-                 S=7, B=2, C=20, transform=None):
+                 S=14, B=2, C=20, transform=None):
         self.img_dir = img_dir
         self.label_dir = label_dir
         self.S = S

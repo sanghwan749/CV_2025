@@ -103,7 +103,7 @@ def main():
         img_dir="./Dataset/Images",
         label_dir="./Dataset/Labels",
         list_file="./Dataset/train.txt",
-        S=7, B=2, C=20,
+        S=14, B=2, C=20,
         transform=get_transforms()
     )
 
@@ -111,7 +111,7 @@ def main():
         img_dir="./Dataset/Images",
         label_dir="./Dataset/Labels",
         list_file="./Dataset/test.txt",
-        S=7, B=2, C=20,
+        S=14, B=2, C=20,
         transform=get_transforms()
     )
 
@@ -122,7 +122,7 @@ def main():
     model = resnet50().to(device)
 
     # Loss
-    loss_fn = YoloLoss(S=7, B=2, C=20)
+    loss_fn = YoloLoss(S=14, B=2, C=20)
 
     # Optimizer
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=5e-4)

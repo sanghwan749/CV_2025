@@ -14,7 +14,7 @@ from utils.dataloader import YOLOv1Dataset      # 같은 DataLoader 사용
 # ==========================================================
 # YOLOv1 Output → Bounding Boxes 변환
 # ==========================================================
-def decode_yolo_output(pred, S=7, B=2, C=20, conf_thresh=0.1):
+def decode_yolo_output(pred, S=14, B=2, C=20, conf_thresh=0.1):
     """
     pred: (7,7,30)
     return: [ [x1,y1,x2,y2,score,class] , ... ]
@@ -149,7 +149,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", type=str, default=None)
     parser.add_argument("--conf", type=float, default=0.1)
-    parser.add_argument("--S", type=int, default=7)
+    parser.add_argument("--S", type=int, default=14)
     parser.add_argument("--B", type=int, default=2)
     parser.add_argument("--C", type=int, default=20)
     args = parser.parse_args()

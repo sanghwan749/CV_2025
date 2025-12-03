@@ -66,7 +66,7 @@ def focal_bce_with_logits(logit, target, gamma=2.0):
 # Final YOLOv1-style loss
 # ==========================================================
 class YoloLoss(nn.Module):
-    def __init__(self, S=7, B=2, C=20):
+    def __init__(self, S=14, B=2, C=20):
         super().__init__()
         self.S = S
         self.B = B
